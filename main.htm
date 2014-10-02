@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<style>
+			#container {
+				position:absolute;
+				margin-left:0px;
+				margin-top:0px;
+				text-align:center;
+			}
+			.start {
+				margin-top:20px;
+				margin-left: 600px;
+				width: 100px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+			}
+			.info {
+				position:absolute;
+				margin-top:0px;
+				margin-left: 0px;
+				text-align:center;
+				position: absolute;
+				color: white;
+			}
+			.hud {
+				top:20%;
+				margin-top:-150px;
+				margin-left: 100px;
+				width: 100px;
+				height: 20px;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body bgcolor="gray"> 
+		<div id='container'></div>
+		<div id='info' class="info"> information </div> 
+		<div id="hud" class="hud">HP</div>
+		<div id="instructions" class="start">Click to play</div>
+
+	</body>
+	<!-- thirdparty libs -->
+	<script src='lib/jquery-2.1.1.min.js'></script>
+	<script src='lib/three.js'></script>
+	<script src='lib/keyboard.js'></script>
+	<script src='lib/PointerLockControls.js'></script>
+
+	<!-- own libs -->
+	<script src="sceneObj.js"></script> 
+	<script src="utils.js"></script> 
+	<script src="floor.js"></script>
+	<script src="walls.js"></script> 
+	<script src="esfeta.js"></script> 
+	<script src="monsterInfo.js"></script> 
+	<script src="monsterFactory.js"></script> 
+	<script src="monster.js"></script> 
+	<script src="shoot.js"></script> 
+	<script src="light.js"></script> 
+	<script src="map.js"></script> 
+	<script src="firstLayerWorker.js"></script>
+	<script src="selfPlayer.js"></script>
+	<script src="counter.js"></script>
+	<script src="label.js"></script>
+	<script src="tick.js"></script> 
+	<script src="anim.js"></script> 
+	<script src="route.js"></script> 
+	<script src="hud.js"></script> 
+	<script src="main.js"></script> 
+</html>
