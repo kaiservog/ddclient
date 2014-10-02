@@ -1,0 +1,5 @@
+{
+	"cmd": ["coffee", "--compile", "--output", "C:\\xampp\\htdocs\\dungeon\\", "${project_path}"],
+	"file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+	"shell": true
+}
