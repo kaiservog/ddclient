@@ -32,22 +32,22 @@ class window.AnimScript
 			restore = (50 * @graus)/ (restoreTime - delayTime)
 
 			if tick.actual() < upTime
-				obj.material.rotation -= up
+				obj.rotation.z -= up
 			else if tick.actual() < downTime
-				obj.material.rotation += down
+				obj.rotation.z += down
 			else if tick.actual() < delayTime
 			else if tick.actual() < restoreTime
-				obj.material.rotation -= restore
+				obj.rotation.z -= restore
 			else
-				obj.material.rotation = 0
+				obj.rotation.z = 0
 
 
 
 		@weaponAtk = (obj, frameIndex) ->
 			switch frameIndex
 				when 1
-					obj.material.rotation = 5
+					obj.rotation = 5
 				when 2, 3, 4, 5
-					obj.material.rotation = -100
+					obj.rotation = -100
 				when 6
-					obj.material.rotation = 0
+					obj.rotation = 0

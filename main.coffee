@@ -122,7 +122,7 @@ class window.Main
 		@memory.add @dino, Types::LIVE
 		@memory.add @counter, Types::TEXT, 120
 		@memory.add @label, Types::TEXT
-		@memory.add @fireball, Types::LIVE
+		#@memory.add @fireball, Types::LIVE
 
 		selfPlayer = @selfPlayer
 

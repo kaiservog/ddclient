@@ -1,6 +1,10 @@
 class window.Monster extends Live
 	constructor: (x, z, @sprites) ->
-		@live = new SceneObj x, z, @sprites, ['R', 'F', 'L', 'B', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6']
+		@live = new SceneObj x, z, 
+			@sprites,
+			['R', 'F', 'L', 'B', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6'],
+			new PerspectiveSimetric(['F','R','B','L'])
+
 		a = new THREE.Vector3(400, 0, 500)
 		b = new THREE.Vector3(650, 0, 500)
 		c = new THREE.Vector3(400, 0, 500)
