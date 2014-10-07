@@ -23,8 +23,9 @@ class window.Map
 		@scene = new THREE.Scene
 		@sceneText = new THREE.Scene
 
-		@scene.add selfPlayer.getCameraObject()
+		@sceneText.add selfPlayer.getCameraObject()
 		@scene.add new THREE.AmbientLight 0xFFFFFF
+		@sceneText.add new THREE.AmbientLight 0xFFFFFF
 
 		@tiles = [[0,0,0,0,0,0,0,0,0,0],
 				  [0,0,1,1,1,1,1,0,0,0],

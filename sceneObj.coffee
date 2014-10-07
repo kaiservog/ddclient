@@ -1,6 +1,6 @@
 class window.Live
 class window.SceneObj
-	constructor: (x, z, @sprites, @spritesMap) ->
+	constructor: (x, z, @sprites, @spritesMap, @perspective) ->
 		@actualSprite = @sprites['F']
 		@state = 'REST'
 		@side = 'F'
@@ -31,11 +31,7 @@ class window.SceneObj
 
 			angle = utils.angle selfPlayer.getPosition(), this
 
-			if angle >= 0 and angle < 45 then @side = 'F'
-			else if angle >= 45 and angle < 135 then @side = 'R'
-			else if angle >= 135 and angle < 225 then @side = 'B'
-			else if angle >= 225 and angle < 315 then @side = 'L'
-			else @side = 'F' #angle >= 315 and angle <= 360 then 
+			@side = @perspective.getSide selfPlayer, this
 
 			if @state == 'WALKING' and @ticker.update() then @changeSpriteByIndex @walkingAni.next()
 			else if @state == 'REST' then @changeSpriteByKey @side

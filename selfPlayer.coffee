@@ -2,8 +2,6 @@ class window.SelfPlayer
 	constructor: (height, width) ->
 		@getPosition = ->
 			@controls.getObject().position
-
-		@updateHands = (dir, selfPlayer) ->
 			
 		@attack = ->
 			@tickerAtk.update() 
@@ -16,7 +14,6 @@ class window.SelfPlayer
 
 			@controls.update()
 			if @state == 'ATK' then @attack()
-			@updateHands @look(), this
 			@setupRays @rays[i], i for i in [0..3]
 
 			collisions = new Utils().hasCollision @rays, blocks
@@ -62,7 +59,9 @@ class window.SelfPlayer
 		@near = 1
 		@far = 1000
 
-		@hands = new THREE.Sprite new THREE.SpriteMaterial({ map : THREE.ImageUtils.loadTexture("img/mace.png") }) 
+		#@hands = new THREE.Sprite new THREE.SpriteMaterial({ map : THREE.ImageUtils.loadTexture("img/mace.png") }) 
+		@hands = new THREE.Mesh(new THREE.PlaneGeometry(1, 1),
+			new THREE.MeshLambertMaterial({ map : THREE.ImageUtils.loadTexture("img/mace.png"), transparent: true }))
 		@camera = new THREE.PerspectiveCamera @viewAngle, @aspect, @near, @far
 
 		@controls = new THREE.PointerLockControls @camera, this
@@ -71,7 +70,7 @@ class window.SelfPlayer
 		@hands.position.x =  (95 / 100) * 2 - 1
 		@hands.position.y =  (10 / 100) * 2 - 1
 		@hands.position.z =  -1.5
-
+		@hands.rotation.y = 150
 
 		@controls.movementSpeed = 0.1
 		@controls.lookSpeed = 0.001
@@ -86,3 +85,4 @@ class window.SelfPlayer
 		@state = 'ATK'
 
 		@rays = [new THREE.Raycaster(), new THREE.Raycaster(), new THREE.Raycaster(), new THREE.Raycaster()]
+		
